@@ -164,5 +164,15 @@ int main()
         v[i][xSize-1] = v[i][xSize-2];
     }
         
+    //inner velocities
+    for(size_t i = 1; i < ySize - 1; i++)
+    {
+        for(size_t j = 1; j < xSize - 1; j++)
+        {
+            u[i][j] =   (psi[i+1][j] - psi[i-1][j]) / dy / 2;
+            v[i][j] = - (psi[i][j+1] - psi[i][j-1]) / dx / 2;
+        }
+    }
+
     return 0;
 }
