@@ -7,10 +7,6 @@
 
 #include <stdio.h>
 
-void calcBorderValues(double velOfMovementBorders, size_t xSize, size_t ySize,
-                      double** dzeta, double** psi, double** u, double** v,
-                      double Re, double dx, double dy, double dt);
-
 struct BorderValuesCalculator
 {
     double bordersVel;
@@ -19,6 +15,10 @@ struct BorderValuesCalculator
                  double** dzeta, double** psi, double** u, double** v,
                  double Re, double dx, double dy, double dt);
 };
+
+void calcBorderValues(double velOfMovementBorders, size_t xSize, size_t ySize,
+                      double** dzeta, double** psi, double** u, double** v,
+                      double Re, double dx, double dy, double dt);
 
 void BorderValuesCalculator_calcBorderValues(
                             struct BorderValuesCalculator *self,
